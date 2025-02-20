@@ -1,4 +1,4 @@
-name: Build IzPack Installer
+name: Minimal Workflow
 
 on:
   push:
@@ -16,16 +16,5 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Java
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'temurin'  # Specify the Java distribution
-
-    - name: Install Apache Ant
-      run: sudo apt-get install -y ant
-
-    - name: Build Installer
-      run: ant -f build.xml build
-      env:
-        IZPACK_HOME: ${{ github.workspace }}/tools
+    - name: Print Hello World
+      run: echo "Hello, World!"
